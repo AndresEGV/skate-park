@@ -6,6 +6,9 @@ const config = {
   password: "a7c809d614427244b4677ac83076359559b23b254e405e89c71a3dd7bfb535c5",
   port: 5432,
   host: "ec2-44-199-26-122.compute-1.amazonaws.com",
+  ssl: {
+    rejectUnauthorized: false,
+  },
 };
 
 const pool = new Pool(config);
