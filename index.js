@@ -50,6 +50,19 @@ app.set("view engine", "handlebars");
 app.listen(port || 3000, console.log("Server up"));
 
 app.get("/", async (req, res) => {
+  (async () => {
+    try {
+      const result = await pool.query(
+        `CREATE TABLE skaters (id SERIAL, email VARCHAR(50) NOT NULL, nombre
+VARCHAR(25) NOT NULL, password VARCHAR(90) NOT NULL, anos_experiencia
+INT NOT NULL, especialidad VARCHAR(50) NOT NULL, foto VARCHAR(255) NOT
+NULL, estado BOOLEAN NOT NULL);`
+      );
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  })();
   const listaDeSkaters = await getSkaters();
   res.render("Index", { listaDeSkaters, active: { Index: true } });
 });
