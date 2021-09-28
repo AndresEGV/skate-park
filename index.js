@@ -7,6 +7,8 @@ const exphbs = require("express-handlebars");
 const expressFileUpload = require("express-fileupload");
 const jwt = require("jsonwebtoken");
 const port = process.env.PORT;
+const cors = require("cors");
+app.use(cors({ origin: true }));
 const secretKey = "Shhhh";
 const {
   registrarSkater,
