@@ -1,0 +1,58 @@
+
+    <h1>Skate Park</h1>
+
+    <div class="py-4 ">
+      <h2>Administración</h2>
+ 
+ <hr />
+<div class="table-responsive">
+   
+      <table class="table tablas">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+           {{#each listaDeSkaters}}
+        <tr>
+          <td>{{formatIndex @index}}</td>
+          <td><img src="img/{{foto}}" width="100" /></td>
+          <td>{{nombre}}</td>
+          <td>{{anos_experiencia}}</td>
+          <td>{{especialidad}}</td>
+          <td><input type="checkbox" {{#if estado}} checked {{/if}} onclick="changeStatus({{id}}, this)"></td>
+
+        </tr>
+      {{/each}}
+        </tbody>
+      </table>
+ </div>
+    </div>
+
+    <script>
+      const changeStatus = async(id, e) => {
+        const estado = e.checked;
+        try{
+          await axios.put('/skaters', {id,estado})
+           estado ?   Swal.fire(
+                    'Habilitado!',
+                    'Skater habilitado 😎',
+                    'success'
+                ) :   Swal.fire(
+                    'Deshabilitado!',
+                    'Skater deshabilitado 😥',
+                    'success'
+                )
+        }catch(e) {
+          console.log(e)
+          alert(e)
+        }
+      }
+    </script>
+

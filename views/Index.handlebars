@@ -1,0 +1,44 @@
+<h1 id="h1-index">Skate Park</h1>
+
+<div class="py-4">
+  <h2>Lista de participantes</h2>
+
+  <hr />
+  <div class="table-responsive-sm">
+    <table class="tablas table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Foto</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Años de experiencia</th>
+          <th scope="col">Especialidad</th>
+          <th scope="col">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each listaDeSkaters}}
+          <tr>
+            <td>{{formatIndex @index}}</td>
+            <td><img src="img/{{foto}}" width="100" /></td>
+            <td>{{nombre}}</td>
+            <td>{{anos_experiencia}}</td>
+            <td>{{especialidad}}</td>
+            {{#if estado}}
+              <td class="text-success font-weight-bold">Aprobado</td>{{else}}<td
+                class="text-warning font-weight-bold"
+              >En revisión</td>{{/if}}
+
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+  </div>
+  <a href="/login" class="px-4">Iniciar Sesión</a>
+
+  <a href="/registro" class="px-4">Registrarme</a>
+</div>
+<script>
+
+</script>

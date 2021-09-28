@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-md navbar-dark color-nav fixed-top fixed-left">
+    <a class="navbar-brand m-0 d-block" ><img src="/img/logo.png"/></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse pt-4" id="navbarsExampleDefault">
+        <ul class="navbar-nav pt-3">
+            <li class="nav-item{{#if active.Index}} active {{/if}}  p-2 pt-2">
+                <a href="/" >
+
+                    Home
+                </a>
+            </li>
+            <li class="nav-item{{#if active.Admin}} active {{/if}} p-2">
+             <a href="/admin" >
+
+                    Admin
+                </a>
+            </li>
+            <li class="nav-item {{#if active.Registro}} active {{/if}} p-2">
+                   <a href="/registro">
+
+                    Registro
+                </a>
+            </li>
+            <li class="nav-item {{#if active.Login}} active {{/if}} p-2">
+               <a href="/login" ">
+
+                    Iniciar Sesión
+                </a>
+            </li>
+          
+        </ul>
+       
+    </div>
+</nav>
+<div class="container text-center">
+      {{{body}}}
+</div>
+
+{{!-- <div class="wrapper">
+    <div class="section">
+        <div class="top_navbar">
+            <div class="hamburger">
+                <a href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+      
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="profile">
+            <a href="/">
+                <img src="/img/logo.png" />
+            </a>
+
+        </div>
+        <ul>
+            <li>
+                <a href="/" class="{{#if active.Index}} active {{/if}}">
+
+                    <span class="item">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin" class="{{#if active.Admin}} active {{/if}}">
+
+                    <span class="item">Admin</span>
+                </a>
+            </li>
+            <li>
+                <a href="/registro" class="{{#if active.Registro}} active {{/if}}">
+
+                    <span class="item">Registro</span>
+                </a>
+            </li>
+            <li>
+                <a href="/login" class="{{#if active.Login}} active {{/if}}">
+
+                    <span class="item">Iniciar Sesion</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+</div> --}}
