@@ -133,13 +133,13 @@ app.post("/verify", async (req, res) => {
     } else {
       res.status(401).send({
         error: "401 Unauthorized",
-        message: "Users credentials dows not match",
+        message: "Credenciales de usuario no coinciden, intente de nuevo porfavor",
       });
     }
   } else {
     res.status(404).send({
       error: "404 Not Found",
-      message: "Users credentials dows not match",
+      message: "Credenciales de usuario no coinciden, intente de nuevo porfavor",
     });
   }
 });

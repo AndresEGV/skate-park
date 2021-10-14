@@ -30,20 +30,31 @@
    const login = async() =>{
       const [email, password] = [...document.querySelectorAll("form input")].map( (i) => i.value
   );
+  if(!email.trim() || !password.trim()){
+       Swal.fire({ icon: 'error', title: 'Oops...', text:
+       `Campos no deben estar vacíos`,
+
+   })
+   return
+  }
    const payload = { email, password }
     try {
        const { data: token } = await   axios.post('/verify', payload)
-   Swal.fire(
+    Swal.fire(
      { position: 'top-end',
       icon: 'success',
       title: 'Autenticacion y autorizacion exitosa',
       showConfirmButton: false, timer: 1500 }).then(() =>
-       { window.location.href = `Datos?token=${token}` }) 
+       { window.location.href = `Datos?token=${token}`
+        })
   } catch ({ response }) {
      const { data } = response
      const { error, message } = data
      console.log(data)
-     alert(message)
+     Swal.fire({ icon: 'error', title: 'Oops...', text:
+       `${message}`,
+   })
+    
    }
  }
   form.addEventListener('submit', (e) => {
