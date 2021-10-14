@@ -57,7 +57,7 @@ input {
 }
 
 .navbar-nav .nav-item a {
-  
+
   color: rgb(241, 237, 237);
   font-size: 17px;
   text-decoration: none;
@@ -170,11 +170,14 @@ input {
    padding-right: 0px;
    padding-left: 0px;
  }
- h1{
-       padding-top: 6rem;
- }
+ 
 }
+@media (max-width: 575px) {
+  h1{
+    padding-top: 1.5rem;
+  }
 
+}
 @media (max-width: 462px) {
   body {
     padding: 0;
@@ -185,7 +188,7 @@ input {
   }
   h1 {
     font-size: 2rem;
-    padding-top: 6rem;
+    padding-top: 7.5rem;
   }
 
   h2 {
