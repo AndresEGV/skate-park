@@ -148,7 +148,7 @@ app.get("/Datos", (req, res) => {
   const { token } = req.query;
   jwt.verify(token, secretKey, (err, decoded) => {
     if (decoded === undefined) {
-      return res.status(401).send({
+      return  res.status(401).send({
         error: "401 Unauthorized",
         message: "Usted no esta autorizado para estar aqui",
       });
